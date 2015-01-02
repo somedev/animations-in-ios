@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		644EFBB41A56AE86003013A7 /* EmitterLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EFBB31A56AE86003013A7 /* EmitterLayerViewController.swift */; };
+		644EFBB61A56C8EA003013A7 /* TransformTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EFBB51A56C8EA003013A7 /* TransformTableViewController.swift */; };
 		73A1EBF31A47399200720904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A1EBF21A47399200720904 /* AppDelegate.swift */; };
 		73A1EBF81A47399200720904 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73A1EBF61A47399200720904 /* Main.storyboard */; };
 		73A1EBFA1A47399200720904 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73A1EBF91A47399200720904 /* Images.xcassets */; };
@@ -16,6 +17,7 @@
 
 /* Begin PBXFileReference section */
 		644EFBB31A56AE86003013A7 /* EmitterLayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmitterLayerViewController.swift; sourceTree = "<group>"; };
+		644EFBB51A56C8EA003013A7 /* TransformTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformTableViewController.swift; sourceTree = "<group>"; };
 		73A1EBED1A47399200720904 /* Animations-in-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Animations-in-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		73A1EBF11A47399200720904 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73A1EBF21A47399200720904 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				644EFBB31A56AE86003013A7 /* EmitterLayerViewController.swift */,
+				644EFBB51A56C8EA003013A7 /* TransformTableViewController.swift */,
 				73A1EBF21A47399200720904 /* AppDelegate.swift */,
 				73A1EBF61A47399200720904 /* Main.storyboard */,
 				73A1EBF91A47399200720904 /* Images.xcassets */,
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				644EFBB61A56C8EA003013A7 /* TransformTableViewController.swift in Sources */,
 				644EFBB41A56AE86003013A7 /* EmitterLayerViewController.swift in Sources */,
 				73A1EBF31A47399200720904 /* AppDelegate.swift in Sources */,
 			);
