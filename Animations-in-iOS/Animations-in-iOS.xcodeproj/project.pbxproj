@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		617A6DD7BF5C11A4CAC32D6D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9CE42A41537E08AF67CA356 /* libPods.a */; };
+		640AFA771A65A9A0009A0D39 /* DecayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFA761A65A9A0009A0D39 /* DecayViewController.swift */; };
+		640AFA791A65A9C7009A0D39 /* SpringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFA781A65A9C7009A0D39 /* SpringViewController.swift */; };
 		644EFBB41A56AE86003013A7 /* EmitterLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EFBB31A56AE86003013A7 /* EmitterLayerViewController.swift */; };
 		644EFBB61A56C8EA003013A7 /* TransformTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EFBB51A56C8EA003013A7 /* TransformTableViewController.swift */; };
 		73A1EBF31A47399200720904 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A1EBF21A47399200720904 /* AppDelegate.swift */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		640AFA731A659E64009A0D39 /* bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bridging-header.h"; sourceTree = "<group>"; };
+		640AFA761A65A9A0009A0D39 /* DecayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DecayViewController.swift; path = Classes/DecayViewController.swift; sourceTree = "<group>"; };
+		640AFA781A65A9C7009A0D39 /* SpringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringViewController.swift; sourceTree = "<group>"; };
 		644EFBB31A56AE86003013A7 /* EmitterLayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmitterLayerViewController.swift; sourceTree = "<group>"; };
 		644EFBB51A56C8EA003013A7 /* TransformTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformTableViewController.swift; sourceTree = "<group>"; };
 		73A1EBED1A47399200720904 /* Animations-in-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Animations-in-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,6 +30,9 @@
 		73A1EBF71A47399200720904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		73A1EBF91A47399200720904 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		73A1EBFC1A47399200720904 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		7EB3275848A82837B24FB37A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A9CE42A41537E08AF67CA356 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD39E11067CE55AF689030C4 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +40,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				617A6DD7BF5C11A4CAC32D6D /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		640AFA741A65A8AF009A0D39 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				644EFBB31A56AE86003013A7 /* EmitterLayerViewController.swift */,
+				644EFBB51A56C8EA003013A7 /* TransformTableViewController.swift */,
+				640AFA761A65A9A0009A0D39 /* DecayViewController.swift */,
+				640AFA781A65A9C7009A0D39 /* SpringViewController.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
 		73A1EBE41A47399200720904 = {
 			isa = PBXGroup;
 			children = (
 				73A1EBEF1A47399200720904 /* Animations-in-iOS */,
 				73A1EBEE1A47399200720904 /* Products */,
+				C88B7631F206ED2C1E79F5EC /* Pods */,
+				F78AB6F000525D6177156BD1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,13 +79,13 @@
 		73A1EBEF1A47399200720904 /* Animations-in-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				644EFBB31A56AE86003013A7 /* EmitterLayerViewController.swift */,
-				644EFBB51A56C8EA003013A7 /* TransformTableViewController.swift */,
+				640AFA741A65A8AF009A0D39 /* Classes */,
 				73A1EBF21A47399200720904 /* AppDelegate.swift */,
 				73A1EBF61A47399200720904 /* Main.storyboard */,
 				73A1EBF91A47399200720904 /* Images.xcassets */,
 				73A1EBFB1A47399200720904 /* LaunchScreen.xib */,
 				73A1EBF01A47399200720904 /* Supporting Files */,
+				640AFA731A659E64009A0D39 /* bridging-header.h */,
 			);
 			path = "Animations-in-iOS";
 			sourceTree = "<group>";
@@ -75,6 +98,23 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C88B7631F206ED2C1E79F5EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7EB3275848A82837B24FB37A /* Pods.debug.xcconfig */,
+				DD39E11067CE55AF689030C4 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F78AB6F000525D6177156BD1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A9CE42A41537E08AF67CA356 /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -82,9 +122,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 73A1EC0C1A47399200720904 /* Build configuration list for PBXNativeTarget "Animations-in-iOS" */;
 			buildPhases = (
+				499D56B2AC51D935A25D2885 /* Check Pods Manifest.lock */,
 				73A1EBE91A47399200720904 /* Sources */,
 				73A1EBEA1A47399200720904 /* Frameworks */,
 				73A1EBEB1A47399200720904 /* Resources */,
+				F390A359561FB9DA6F5ED3CA /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -140,13 +182,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		499D56B2AC51D935A25D2885 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F390A359561FB9DA6F5ED3CA /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		73A1EBE91A47399200720904 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				644EFBB61A56C8EA003013A7 /* TransformTableViewController.swift in Sources */,
+				640AFA771A65A9A0009A0D39 /* DecayViewController.swift in Sources */,
 				644EFBB41A56AE86003013A7 /* EmitterLayerViewController.swift in Sources */,
+				640AFA791A65A9C7009A0D39 /* SpringViewController.swift in Sources */,
 				73A1EBF31A47399200720904 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -252,21 +329,25 @@
 		};
 		73A1EC0D1A47399200720904 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EB3275848A82837B24FB37A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Animations-in-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Animations-in-iOS/bridging-header.h";
 			};
 			name = Debug;
 		};
 		73A1EC0E1A47399200720904 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD39E11067CE55AF689030C4 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Animations-in-iOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Animations-in-iOS/bridging-header.h";
 			};
 			name = Release;
 		};
