@@ -11,25 +11,31 @@ import QuartzCore
 
 class EmitterLayerViewController: UIViewController {
     
+    private var emitterLayer:CAEmitterLayer?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.emitterLayer = self.createEmitterLayer()
+        self.view.layer.addSublayer(self.emitterLayer)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.emitterLayer?.removeFromSuperlayer()
+    }
+    
+    //MARK: - Utils
+    func createEmitterLayer() -> CAEmitterLayer {
         var emitterLayer = CAEmitterLayer()
         emitterLayer.frame = self.view.bounds
         emitterLayer.emitterPosition = CGPointMake(emitterLayer.bounds.size.width / 2, emitterLayer.frame.origin.y)
         emitterLayer.emitterZPosition = 10
         emitterLayer.emitterSize = CGSizeMake(emitterLayer.bounds.size.width, 0)
         emitterLayer.emitterShape = kCAEmitterLayerLine
-        
-
-        
-        emitterLayer.emitterCells = [self.emitterCellFromImageName("snow"), self.emitterCellFromImageName("snow1"), self.emitterCellFromImageName("snow2")]
-        
-        self.view.layer .addSublayer(emitterLayer)
+        emitterLayer.emitterCells = self.emitterCells()
+        return emitterLayer
     }
     
-    
-    //MARK: - Utils
     func emitterCellFromImageName(name:String) -> (CAEmitterCell) {
         var emitterCell = CAEmitterCell()
         emitterCell.scale = 0.1
@@ -43,5 +49,11 @@ class EmitterLayerViewController: UIViewController {
         emitterCell.spinRange = 4;
         emitterCell.contents = UIImage(named: name)?.CGImage
         return emitterCell
+    }
+    
+    func emitterCells() -> [CAEmitterCell] {
+        return [self.emitterCellFromImageName("snow"),
+                self.emitterCellFromImageName("snow1"),
+                self.emitterCellFromImageName("snow2")]
     }
 }

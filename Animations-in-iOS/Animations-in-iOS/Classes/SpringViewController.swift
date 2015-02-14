@@ -81,20 +81,26 @@ class SpringViewController: UIViewController {
         var animation = POPSpringAnimation()
         
         let customProperty: POPAnimatableProperty = POPAnimatableProperty.propertyWithName(
-            "com.property.circlr.center",
+            "com.property.circle.center",
             initializer: { property in
                 property.readBlock = {
                     object, values in
-                    values[0] = -(object as SpringViewController).horisontalConstraint.constant
-                    values[1] = -(object as SpringViewController).verticalConstraint.constant
+                    if let controller = object as? SpringViewController {
+                        values[0] = -(controller).horisontalConstraint.constant
+                        values[1] = -(controller).verticalConstraint.constant
+                        
+                    }
                 }
                 property.writeBlock = {
                     object, values in
-                    (object as SpringViewController).horisontalConstraint.constant = -values[0]
-                    (object as SpringViewController).verticalConstraint.constant = -values[1]
+                    if let controller = object as? SpringViewController {
+
+                    (controller).horisontalConstraint.constant = -values[0]
+                    (controller).verticalConstraint.constant = -values[1]
+                    }
                 }
                 property.threshold = 0.01
-        }) as POPAnimatableProperty
+        }) as! POPAnimatableProperty
         
         animation.property = customProperty
         animation.springSpeed = CGFloat(self.speedSlider.value)

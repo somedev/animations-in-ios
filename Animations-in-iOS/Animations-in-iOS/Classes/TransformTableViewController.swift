@@ -30,11 +30,15 @@ class TransformTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("TitleCell", forIndexPath: indexPath) as UITableViewCell
+        var cell = tableView.dequeueReusableCellWithIdentifier("TitleCell", forIndexPath: indexPath) as? UITableViewCell
 
-        cell.textLabel?.text = "Table cell #\(indexPath.row)"
-
-        return cell
+        if let cell = cell {
+            cell.textLabel?.text = "Table cell #\(indexPath.row)"
+            return cell
+        }
+        else {
+            return UITableViewCell()
+        }
     }
     
      // MARK: - Table view delegate

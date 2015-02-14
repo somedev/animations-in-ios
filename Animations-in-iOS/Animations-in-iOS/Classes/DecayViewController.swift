@@ -23,7 +23,7 @@ class DecayViewController: UIViewController {
     
     //MARK: - actions
     @IBAction func valueChanged(sender: AnyObject) {
-        self.deceleration.text = NSString(format: "%.2f", self.decelerationSlider.value)
+        self.deceleration.text = String(format: "%.2f", self.decelerationSlider.value)
 
     }
     
@@ -92,16 +92,21 @@ class DecayViewController: UIViewController {
             initializer: { property in
                 property.readBlock = {
                     object, values in
-                    values[0] = -(object as DecayViewController).horisontalConstraint.constant
-                    values[1] = -(object as DecayViewController).verticalConstraint.constant
+                    if let viewController = object as? DecayViewController {
+                        values[0] = -(viewController).horisontalConstraint.constant
+                        values[1] = -(viewController).verticalConstraint.constant
+                    }
                 }
                 property.writeBlock = {
                     object, values in
-                    (object as DecayViewController).horisontalConstraint.constant = -values[0]
-                    (object as DecayViewController).verticalConstraint.constant = -values[1]
+                    if let viewController = object as? DecayViewController {
+                        (viewController).horisontalConstraint.constant = -values[0]
+                        (viewController).verticalConstraint.constant = -values[1]
+                    }
                 }
                 property.threshold = 0.01
-        }) as POPAnimatableProperty
+        }) as! POPAnimatableProperty
+        
         animation.property = customProperty
         animation.velocity = NSValue(CGPoint: velocity)
         animation.deceleration = CGFloat(self.decelerationSlider.value)
