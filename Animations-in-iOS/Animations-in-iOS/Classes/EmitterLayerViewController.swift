@@ -36,7 +36,7 @@ class EmitterLayerViewController: UIViewController {
         return emitterLayer
     }
     
-    func emitterCellFromImageName(name:String) -> (CAEmitterCell) {
+    func emitterCellFromImageName(name:String) -> CAEmitterCell {
         var emitterCell = CAEmitterCell()
         emitterCell.scale = 0.1
         emitterCell.scaleRange = 0.2
