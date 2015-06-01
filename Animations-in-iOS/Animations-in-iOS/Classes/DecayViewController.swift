@@ -23,23 +23,23 @@ class DecayViewController: UIViewController {
     
     //MARK: - actions
     @IBAction func valueChanged(sender: AnyObject) {
-        self.deceleration.text = String(format: "%.2f", self.decelerationSlider.value)
+        deceleration.text = String(format: "%.2f", decelerationSlider.value)
 
     }
     
     //MARK: - UIViewController stuff
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.valueChanged(self)
+        valueChanged(self)
         let pan = UIPanGestureRecognizer(target: self, action: "handlePan:")
-        self.presentationnView.addGestureRecognizer(pan)
+        presentationnView.addGestureRecognizer(pan)
     }
     
     //MARK: - Gesture recognizer
     func handlePan(recognizer: UIPanGestureRecognizer){
         
-        let location = recognizer.locationInView(self.presentationnView)
-        let velocity = recognizer.velocityInView(self.presentationnView)
+        let location = recognizer.locationInView(presentationnView)
+        let velocity = recognizer.velocityInView(presentationnView)
         struct StaticContainer {
             static var movingEnabled:Bool = false
         }
@@ -48,31 +48,31 @@ class DecayViewController: UIViewController {
         {
         case .Began:
             
-            let pillPressed = (self.circle == self.presentationnView.hitTest(location, withEvent: nil))
+            let pillPressed = (circle == presentationnView.hitTest(location, withEvent: nil))
             StaticContainer.movingEnabled = pillPressed
             break
             
         case .Changed:
             if(StaticContainer.movingEnabled){
                 
-                if let animation = (self.pop_animationForKey(self.kAnimationName) as? POPDecayAnimation){
+                if let animation = (pop_animationForKey(kAnimationName) as? POPDecayAnimation){
                     animation.velocity = NSValue(CGPoint: velocity)
                 }
                 else{
-                    self.horisontalConstraint.constant = self.presentationnView.frame.width/2 - location.x
-                    self.verticalConstraint.constant = self.presentationnView.frame.height/2 - location.y
-                    self.view.layoutIfNeeded()
+                    horisontalConstraint.constant = presentationnView.frame.width/2 - location.x
+                    verticalConstraint.constant = presentationnView.frame.height/2 - location.y
+                    view.layoutIfNeeded()
                 }
             }
             break
             
         case .Ended:
             //update velocity if animation is running
-            if let animation = (self.pop_animationForKey(self.kAnimationName) as? POPDecayAnimation){
+            if let animation = (pop_animationForKey(kAnimationName) as? POPDecayAnimation){
                 animation.velocity = NSValue(CGPoint: velocity)
             }
             else{
-                self.moveCircle(velocity)
+                moveCircle(velocity)
             }
             break
             
@@ -109,9 +109,9 @@ class DecayViewController: UIViewController {
         
         animation.property = customProperty
         animation.velocity = NSValue(CGPoint: velocity)
-        animation.deceleration = CGFloat(self.decelerationSlider.value)
+        animation.deceleration = CGFloat(decelerationSlider.value)
         animation.removedOnCompletion = true
-        self.pop_addAnimation(animation, forKey: self.kAnimationName)
+        pop_addAnimation(animation, forKey: kAnimationName)
     }
     
 }

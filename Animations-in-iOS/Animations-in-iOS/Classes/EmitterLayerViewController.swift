@@ -15,24 +15,24 @@ class EmitterLayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.emitterLayer = self.createEmitterLayer()
-        self.view.layer.addSublayer(self.emitterLayer)
+        emitterLayer = createEmitterLayer()
+        view.layer.addSublayer(emitterLayer)
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.emitterLayer?.removeFromSuperlayer()
+        emitterLayer?.removeFromSuperlayer()
     }
     
     //MARK: - Utils
     func createEmitterLayer() -> CAEmitterLayer {
         var emitterLayer = CAEmitterLayer()
-        emitterLayer.frame = self.view.bounds
+        emitterLayer.frame = view.bounds
         emitterLayer.emitterPosition = CGPointMake(emitterLayer.bounds.size.width / 2, emitterLayer.frame.origin.y)
         emitterLayer.emitterZPosition = 10
         emitterLayer.emitterSize = CGSizeMake(emitterLayer.bounds.size.width, 0)
         emitterLayer.emitterShape = kCAEmitterLayerLine
-        emitterLayer.emitterCells = self.emitterCells()
+        emitterLayer.emitterCells = emitterCells()
         return emitterLayer
     }
     
@@ -52,8 +52,8 @@ class EmitterLayerViewController: UIViewController {
     }
     
     func emitterCells() -> [CAEmitterCell] {
-        return [self.emitterCellFromImageName("snow"),
-                self.emitterCellFromImageName("snow1"),
-                self.emitterCellFromImageName("snow2")]
+        return [emitterCellFromImageName("snow"),
+                emitterCellFromImageName("snow1"),
+                emitterCellFromImageName("snow2")]
     }
 }

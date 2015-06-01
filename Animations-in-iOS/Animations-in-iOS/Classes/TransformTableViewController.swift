@@ -15,7 +15,7 @@ class TransformTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.clearsSelectionOnViewWillAppear = false
+        clearsSelectionOnViewWillAppear = false
     }
 
     // MARK: - Table view data source

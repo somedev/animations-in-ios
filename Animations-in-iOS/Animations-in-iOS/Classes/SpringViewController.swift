@@ -24,27 +24,27 @@ class SpringViewController: UIViewController {
     @IBOutlet weak var presentationView: UIView!
     //MARK: - actions
     @IBAction func valueChanged(sender: AnyObject) {
-        self.bouncinessLabel.text = "\(Int(self.bouncinessSlider.value))"
-        self.speedLabel.text = "\(Int(self.speedSlider.value))"
+        bouncinessLabel.text = "\(Int(bouncinessSlider.value))"
+        speedLabel.text = "\(Int(speedSlider.value))"
     }
     
     //MARK: - UIViewController stuff
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.valueChanged(self)
+        valueChanged(self)
         let pan = UIPanGestureRecognizer(target: self, action: "handlePan:")
-        self.presentationView.addGestureRecognizer(pan)
+        presentationView.addGestureRecognizer(pan)
     }
     
     //MARK: - Gesture recognizer
     func handlePan(recognizer: UIPanGestureRecognizer){
         
-        if let animation = (self.pop_animationForKey(self.kAnimationName) as? POPDecayAnimation){
+        if let animation = (pop_animationForKey(kAnimationName) as? POPDecayAnimation){
             return
         }
         
-        let location = recognizer.locationInView(self.presentationView)
-        let velocity = recognizer.velocityInView(self.presentationView)
+        let location = recognizer.locationInView(presentationView)
+        let velocity = recognizer.velocityInView(presentationView)
         struct StaticContainer {
             static var movingEnabled:Bool = false
         }
@@ -53,20 +53,20 @@ class SpringViewController: UIViewController {
         {
         case .Began:
             
-            let pillPressed = (self.circle == self.presentationView.hitTest(location, withEvent: nil))
+            let pillPressed = (circle == presentationView.hitTest(location, withEvent: nil))
             StaticContainer.movingEnabled = pillPressed
             break
             
         case .Changed:
             if(StaticContainer.movingEnabled){
-                self.horisontalConstraint.constant = self.presentationView.frame.width/2 - location.x
-                self.verticalConstraint.constant = self.presentationView.frame.height/2 - location.y
-                self.view.layoutIfNeeded()
+                horisontalConstraint.constant = presentationView.frame.width/2 - location.x
+                verticalConstraint.constant = presentationView.frame.height/2 - location.y
+                view.layoutIfNeeded()
             }
             break
             
         case .Ended:
-            self.moveCircleToCenterAnimated()
+            moveCircleToCenterAnimated()
             
             break
             
@@ -103,10 +103,10 @@ class SpringViewController: UIViewController {
         }) as! POPAnimatableProperty
         
         animation.property = customProperty
-        animation.springSpeed = CGFloat(self.speedSlider.value)
-        animation.springBounciness = CGFloat(self.bouncinessSlider.value)
+        animation.springSpeed = CGFloat(speedSlider.value)
+        animation.springBounciness = CGFloat(bouncinessSlider.value)
         animation.toValue = NSValue(CGPoint:CGPointZero)
         animation.removedOnCompletion = true
-        self.pop_addAnimation(animation, forKey: self.kAnimationName)
+        pop_addAnimation(animation, forKey: kAnimationName)
     }
 }
