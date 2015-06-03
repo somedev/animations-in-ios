@@ -4,6 +4,6 @@ before_install:
   - gem update cocoapods
 
 script:
-  - pod install
+  - pod install --project-directory Animations-in-iOS
   - xctool -workspace Animations-in-iOS/Animations-in-iOS.xcworkspace -scheme Animations-in-iOS -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
   
