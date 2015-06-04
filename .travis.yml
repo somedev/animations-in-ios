@@ -1,4 +1,4 @@
-language: objective-c
+language: swift
 podfile:  Animations-in-iOS/podfile
 before_install:
   - gem update cocoapods
