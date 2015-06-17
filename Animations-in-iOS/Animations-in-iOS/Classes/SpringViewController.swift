@@ -39,12 +39,11 @@ class SpringViewController: UIViewController {
     //MARK: - Gesture recognizer
     func handlePan(recognizer: UIPanGestureRecognizer){
         
-        if let animation = (pop_animationForKey(kAnimationName) as? POPDecayAnimation){
+        if let _ = (pop_animationForKey(kAnimationName) as? POPDecayAnimation){
             return
         }
         
         let location = recognizer.locationInView(presentationView)
-        let velocity = recognizer.velocityInView(presentationView)
         struct StaticContainer {
             static var movingEnabled:Bool = false
         }
@@ -78,7 +77,7 @@ class SpringViewController: UIViewController {
     
     //MARK: - utils
     func moveCircleToCenterAnimated() {
-        var animation = POPSpringAnimation()
+        let animation = POPSpringAnimation()
         
         let customProperty: POPAnimatableProperty = POPAnimatableProperty.propertyWithName(
             "com.property.circle.center",

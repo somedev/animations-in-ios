@@ -16,7 +16,7 @@ class EmitterLayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         emitterLayer = createEmitterLayer()
-        view.layer.addSublayer(emitterLayer)
+        view.layer.addSublayer(emitterLayer!)
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -26,7 +26,7 @@ class EmitterLayerViewController: UIViewController {
     
     //MARK: - Utils
     func createEmitterLayer() -> CAEmitterLayer {
-        var emitterLayer = CAEmitterLayer()
+       let emitterLayer = CAEmitterLayer()
         emitterLayer.frame = view.bounds
         emitterLayer.emitterPosition = CGPointMake(emitterLayer.bounds.size.width / 2, emitterLayer.frame.origin.y)
         emitterLayer.emitterZPosition = 10
@@ -37,7 +37,7 @@ class EmitterLayerViewController: UIViewController {
     }
     
     func emitterCellFromImageName(name:String) -> CAEmitterCell {
-        var emitterCell = CAEmitterCell()
+        let emitterCell = CAEmitterCell()
         emitterCell.scale = 0.1
         emitterCell.scaleRange = 0.2
         emitterCell.emissionRange = 1.2

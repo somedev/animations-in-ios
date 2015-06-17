@@ -30,15 +30,9 @@ class TransformTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("TitleCell", forIndexPath: indexPath) as? UITableViewCell
-
-        if let cell = cell {
-            cell.textLabel?.text = "Table cell #\(indexPath.row)"
-            return cell
-        }
-        else {
-            return UITableViewCell()
-        }
+        let cell = tableView.dequeueReusableCellWithIdentifier("TitleCell", forIndexPath: indexPath)
+        cell.textLabel?.text = "Table cell #\(indexPath.row)"
+        return cell
     }
     
      // MARK: - Table view delegate
@@ -47,7 +41,7 @@ class TransformTableViewController: UITableViewController {
         
 
         //1. Setup the CATransform3D structure
-        var angle = CGFloat(90*M_PI/180)
+        let angle = CGFloat(90*M_PI/180)
         var rotation = CATransform3DMakeRotation(angle, 0.0, 0.7, 0.4)
         rotation.m34 = 1.0 / -600;
         

@@ -69,7 +69,7 @@ class HeartViewController: UIViewController {
     
     
     //MARK: - Animation delegate
-    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+    override func animationDidStop(anim: CAAnimation, finished flag: Bool) {
         heartLayer.removeFromSuperlayer()
         heartLayer.removeAllAnimations()
         heartLayer.opacity = 1

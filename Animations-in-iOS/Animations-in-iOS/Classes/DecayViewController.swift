@@ -85,7 +85,7 @@ class DecayViewController: UIViewController {
     
     //MARK: - utils
     func moveCircle(velocity:CGPoint) {
-        var animation = POPDecayAnimation()
+        let animation = POPDecayAnimation()
         
         let customProperty: POPAnimatableProperty = POPAnimatableProperty.propertyWithName(
             "com.property.circlr.center",
