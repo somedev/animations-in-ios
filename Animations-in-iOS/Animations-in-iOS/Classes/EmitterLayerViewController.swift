@@ -11,33 +11,30 @@ import QuartzCore
 
 class EmitterLayerViewController: UIViewController {
     
-    private var emitterLayer:CAEmitterLayer?
+    private lazy var emitterLayer:CAEmitterLayer = {
+        let emitterLayer = CAEmitterLayer()
+        emitterLayer.frame = self.view.bounds
+        emitterLayer.emitterPosition = CGPointMake(emitterLayer.bounds.size.width / 2, emitterLayer.frame.origin.y)
+        emitterLayer.emitterZPosition = 10
+        emitterLayer.emitterSize = CGSizeMake(emitterLayer.bounds.size.width, 0)
+        emitterLayer.emitterShape = kCAEmitterLayerLine
+        emitterLayer.emitterCells = self.emitterCells()
+        return emitterLayer
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        emitterLayer = createEmitterLayer()
         view.layer.addSublayer(emitterLayer)
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        emitterLayer?.removeFromSuperlayer()
+        emitterLayer.removeFromSuperlayer()
     }
     
     //MARK: - Utils
-    func createEmitterLayer() -> CAEmitterLayer {
-        var emitterLayer = CAEmitterLayer()
-        emitterLayer.frame = view.bounds
-        emitterLayer.emitterPosition = CGPointMake(emitterLayer.bounds.size.width / 2, emitterLayer.frame.origin.y)
-        emitterLayer.emitterZPosition = 10
-        emitterLayer.emitterSize = CGSizeMake(emitterLayer.bounds.size.width, 0)
-        emitterLayer.emitterShape = kCAEmitterLayerLine
-        emitterLayer.emitterCells = emitterCells()
-        return emitterLayer
-    }
-    
     func emitterCellFromImageName(name:String) -> CAEmitterCell {
-        var emitterCell = CAEmitterCell()
+        let emitterCell = CAEmitterCell()
         emitterCell.scale = 0.1
         emitterCell.scaleRange = 0.2
         emitterCell.emissionRange = 1.2

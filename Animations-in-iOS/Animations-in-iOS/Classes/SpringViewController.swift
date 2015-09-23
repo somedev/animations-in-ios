@@ -78,7 +78,7 @@ class SpringViewController: UIViewController {
     
     //MARK: - utils
     func moveCircleToCenterAnimated() {
-        var animation = POPSpringAnimation()
+        let animation = POPSpringAnimation()
         
         let customProperty: POPAnimatableProperty = POPAnimatableProperty.propertyWithName(
             "com.property.circle.center",
