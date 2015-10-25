@@ -10,6 +10,7 @@
 		617A6DD7BF5C11A4CAC32D6D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9CE42A41537E08AF67CA356 /* libPods.a */; };
 		640AFA771A65A9A0009A0D39 /* DecayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFA761A65A9A0009A0D39 /* DecayViewController.swift */; };
 		640AFA791A65A9C7009A0D39 /* SpringViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640AFA781A65A9C7009A0D39 /* SpringViewController.swift */; };
+		6429B2671BDD4880001962A9 /* SpringAnimationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6429B2661BDD4880001962A9 /* SpringAnimationViewController.swift */; };
 		644EFBB41A56AE86003013A7 /* EmitterLayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EFBB31A56AE86003013A7 /* EmitterLayerViewController.swift */; };
 		644EFBB61A56C8EA003013A7 /* TransformTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644EFBB51A56C8EA003013A7 /* TransformTableViewController.swift */; };
 		64BBDB301B1CE372007714F9 /* HeartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BBDB2F1B1CE372007714F9 /* HeartViewController.swift */; };
@@ -23,6 +24,7 @@
 		640AFA731A659E64009A0D39 /* bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bridging-header.h"; sourceTree = "<group>"; };
 		640AFA761A65A9A0009A0D39 /* DecayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecayViewController.swift; sourceTree = "<group>"; };
 		640AFA781A65A9C7009A0D39 /* SpringViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringViewController.swift; sourceTree = "<group>"; };
+		6429B2661BDD4880001962A9 /* SpringAnimationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimationViewController.swift; sourceTree = "<group>"; };
 		644EFBB31A56AE86003013A7 /* EmitterLayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmitterLayerViewController.swift; sourceTree = "<group>"; };
 		644EFBB51A56C8EA003013A7 /* TransformTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransformTableViewController.swift; sourceTree = "<group>"; };
 		64BBDB2F1B1CE372007714F9 /* HeartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeartViewController.swift; sourceTree = "<group>"; };
@@ -52,6 +54,7 @@
 		640AFA741A65A8AF009A0D39 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				6429B2661BDD4880001962A9 /* SpringAnimationViewController.swift */,
 				644EFBB31A56AE86003013A7 /* EmitterLayerViewController.swift */,
 				644EFBB51A56C8EA003013A7 /* TransformTableViewController.swift */,
 				640AFA761A65A9A0009A0D39 /* DecayViewController.swift */,
@@ -226,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				644EFBB61A56C8EA003013A7 /* TransformTableViewController.swift in Sources */,
+				6429B2671BDD4880001962A9 /* SpringAnimationViewController.swift in Sources */,
 				640AFA771A65A9A0009A0D39 /* DecayViewController.swift in Sources */,
 				644EFBB41A56AE86003013A7 /* EmitterLayerViewController.swift in Sources */,
 				64BBDB301B1CE372007714F9 /* HeartViewController.swift in Sources */,
@@ -291,7 +295,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -327,7 +331,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
