@@ -1,5 +1,6 @@
 language: swift
 osx_image: xcode7
+sudo: false
 podfile:  Animations-in-iOS/podfile
 before_install:
   - gem update cocoapods
